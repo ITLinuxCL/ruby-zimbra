@@ -30,7 +30,7 @@ module Zimbra
       def from_s(value)
         target_id, target_name, name = value.split(' ')
         target_class = TARGET_MAPPINGS[target_name]
-        raise TargetObjectNotFound, "Target object not found for acl #{acl_string}" if target_class.nil?
+        raise TargetObjectNotFound, "Target object not found for acl #{target_name}" if target_class.nil?
         new(:target_id => target_id, :target_class => target_class, :name => name)
       end
     end
